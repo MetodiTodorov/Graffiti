@@ -1,0 +1,25 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+/ipch
+/Graffiti.VC.VC.opendb
+/Graffiti.VC.db
+/.vs
+
+/Graffiti/Debug
+/Graffiti/Debug DLL
+/Graffiti/Release
+/Graffiti/Release DLL
+/Graffiti/x64/Debug
+/Graffiti/x64/Debug DLL
+/Graffiti/x64/Release
+/Graffiti/x64/Release DLL
+
+
+
