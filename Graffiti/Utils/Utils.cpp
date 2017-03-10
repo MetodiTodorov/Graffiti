@@ -98,49 +98,49 @@ void ARGBToImg(const std::vector<unsigned>& from, wxImage& to)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-unsigned char GetAlpha(unsigned argb)
+BYTE GetAlpha(unsigned argb)
 {
-	return static_cast<unsigned char>((argb & 0xFF000000) >> 12);
+	return static_cast<BYTE>((argb & 0xFF000000) >> 12);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-unsigned char GetRed(unsigned argb)
+BYTE GetRed(unsigned argb)
 {
-	return static_cast<unsigned char>((argb & 0x00FF0000) >> 8);
+	return static_cast<BYTE>((argb & 0x00FF0000) >> 8);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-unsigned char GetGreen(unsigned argb)
+BYTE GetGreen(unsigned argb)
 {
-	return static_cast<unsigned char>((argb & 0x0000FF00) >> 4);
+	return static_cast<BYTE>((argb & 0x0000FF00) >> 4);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-unsigned char GetBlue(unsigned argb)
+BYTE GetBlue(unsigned argb)
 {
-	return static_cast<unsigned char>(argb & 0x000000FF);
+	return static_cast<BYTE>(argb & 0x000000FF);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void SetAlpha(unsigned char alpha, unsigned& argb)
+void SetAlpha(BYTE alpha, unsigned& argb)
 {
 	argb |= ((unsigned)alpha << 12);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void SetRed(unsigned char red, unsigned& argb)
+void SetRed(BYTE red, unsigned& argb)
 {
 	argb |= ((unsigned)red << 8);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void SetGreen(unsigned char green, unsigned& argb)
+void SetGreen(BYTE green, unsigned& argb)
 {
 	argb |= ((unsigned)green << 4);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void SetBlue(unsigned char blue, unsigned& argb)
+void SetBlue(BYTE blue, unsigned& argb)
 {
 	argb |= (unsigned)blue;
 }

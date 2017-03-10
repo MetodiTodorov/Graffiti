@@ -20,6 +20,7 @@ public:
 		EndSaveAs,			// save pic with new title
 		BeginBlurEffect,	// start blur effect
 		BeginInverseEffect,	// start inverse effect
+		BeginHistEqEffect,	// start histogram equalization effect
 		Working,			// working status
 	};
 

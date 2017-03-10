@@ -24,6 +24,7 @@ public:
 	// effects
 	void			Blur(int horizontal, int vertical);
 	void			Inverse();
+	void			HistEq();
 
 	bool			IsChanged() const;
 	void			CancelCurrentTask();

@@ -21,6 +21,7 @@ private:
 	void OnQuit(wxCommandEvent& ev);
 	void OnBlur(wxCommandEvent& ev);
 	void OnInverse(wxCommandEvent& ev);	
+	void OnHistEq(wxCommandEvent& ev);
 
 	void OnMsgReceived(const Message& msg) override;
 	void OnLoadFile(const Message& msg);	
@@ -38,6 +39,7 @@ private:
 	wxMenu*		effect_;
 	wxMenuItem*	blur_;
 	wxMenuItem*	inverse_;
+	wxMenuItem*	histEq_;
 };
 
 ///////////////////////////////////////////////////////////////////////////////

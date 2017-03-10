@@ -77,6 +77,9 @@
     <ClCompile Include="Task\InverseTask.cpp">
       <Filter>Task</Filter>
     </ClCompile>
+    <ClCompile Include="Task\HistEqTask.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ui\Application.h">
@@ -153,6 +156,9 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Task\InverseTask.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Task\HistEqTask.h">
       <Filter>Task</Filter>
     </ClInclude>
   </ItemGroup>

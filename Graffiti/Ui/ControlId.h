@@ -3,6 +3,7 @@ enum ControlId
 {
 	ID_MM_Blur,
 	ID_MM_Inverse,
+	ID_MM_HistEq,
 	ID_SLD_BlurH,
 	ID_SLD_BlurV,
 };

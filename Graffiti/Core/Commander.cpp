@@ -26,6 +26,7 @@ void Commander::OnMsgReceived(const Message& msg)
 	DISPATCH(EndSaveAs);
 	DISPATCH(BeginBlurEffect);
 	DISPATCH(BeginInverseEffect);
+	DISPATCH(BeginHistEqEffect);
 	}
 }
 
@@ -98,5 +99,16 @@ void Commander::OnBeginInverseEffect(const Message& msg)
 
 	current->Inverse();
 }
+
+///////////////////////////////////////////////////////////////////////////////
+void Commander::OnBeginHistEqEffect(const Message& msg)
+{
+	auto fileMgr = GetFileMgr();
+	auto current = fileMgr->GetCurrent();
+	AssertReturnUnless(current);
+
+	current->HistEq();
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////

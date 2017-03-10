@@ -17,6 +17,7 @@ private:
 	void OnEndSaveAs(const Message& msg);
 	void OnBeginBlurEffect(const Message& msg);	
 	void OnBeginInverseEffect(const Message& msg);
+	void OnBeginHistEqEffect(const Message& msg);
 
 private:
 };

@@ -46,14 +46,17 @@ void MainMenu::CreateEffectMenu()
 	effect_ = new wxMenu;
 	blur_ = new wxMenuItem(effect_, ID_MM_Blur, wxT("Blur"));
 	inverse_ = new wxMenuItem(effect_, ID_MM_Inverse, wxT("Inverse"));
+	histEq_ = new wxMenuItem(effect_, ID_MM_HistEq, wxT("Histogram Equalization"));
 
 	effect_->Append(blur_);
 	effect_->Append(inverse_);
+	effect_->Append(histEq_);
 
 	Append(effect_, wxT("&Effect"));
 
 	Bind(wxEVT_COMMAND_MENU_SELECTED, &MainMenu::OnBlur, this, ID_MM_Blur);
 	Bind(wxEVT_COMMAND_MENU_SELECTED, &MainMenu::OnInverse, this, ID_MM_Inverse);
+	Bind(wxEVT_COMMAND_MENU_SELECTED, &MainMenu::OnHistEq, this, ID_MM_HistEq);	
 
 	RefreshEffectMenus();
 }
@@ -108,6 +111,13 @@ void MainMenu::OnInverse(wxCommandEvent& ev)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+void MainMenu::OnHistEq(wxCommandEvent& ev)
+{
+	auto dispatcher = GetMsgDispatcher();
+	dispatcher->Raise(Message::BeginHistEqEffect);
+}
+
+///////////////////////////////////////////////////////////////////////////////
 void MainMenu::OnMsgReceived(const Message& msg)
 {
 	switch (msg.GetType())
@@ -146,9 +156,11 @@ void MainMenu::RefreshFileMenus()
 void MainMenu::RefreshEffectMenus()
 {
 	auto fileMgr = GetFileMgr();
-	auto enableSave = fileMgr->GetCurrent() != nullptr;
+	auto enable = fileMgr->GetCurrent() != nullptr;
 
-	blur_->Enable(enableSave);
+	blur_->Enable(enable);
+	inverse_->Enable(enable);
+	histEq_->Enable(enable);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

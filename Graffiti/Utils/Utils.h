@@ -9,15 +9,15 @@ void Float4ToImg(const std::vector<concurrency::graphics::float_4>& from, wxImag
 std::vector<unsigned> ImgToARGB(const wxImage& img);
 void ARGBToImg(const std::vector<unsigned>& from, wxImage& to);
 
-unsigned char GetAlpha(unsigned argb);
-unsigned char GetRed(unsigned argb);
-unsigned char GetGreen(unsigned argb);
-unsigned char GetBlue(unsigned argb);
+BYTE GetAlpha(unsigned argb);
+BYTE GetRed(unsigned argb);
+BYTE GetGreen(unsigned argb);
+BYTE GetBlue(unsigned argb);
 
-void SetAlpha(unsigned char alpha, unsigned& argb);
-void SetRed(unsigned char red, unsigned& argb);
-void SetGreen(unsigned char green, unsigned& argb);
-void SetBlue(unsigned char blue, unsigned& argb);
+void SetAlpha(BYTE alpha, unsigned& argb);
+void SetRed(BYTE red, unsigned& argb);
+void SetGreen(BYTE green, unsigned& argb);
+void SetBlue(BYTE blue, unsigned& argb);
 
 ///////////////////////////////////////////////////////////////////////////////
 

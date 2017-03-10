@@ -3,6 +3,7 @@
 #include "Task/ImgTask.h"
 #include "Task/BlurTask.h"
 #include "Task/InverseTask.h"
+#include "Task/HistEqTask.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 WorkFile::WorkFile()
@@ -119,11 +120,26 @@ void WorkFile::Inverse()
 	}
 	else
 	{
-		// inverse image
 		auto task = new InverseTask(image_.Copy());
 		history_.PushNewTask(task);
 	}
 }
+
+///////////////////////////////////////////////////////////////////////////////
+void WorkFile::HistEq()
+{
+	auto current = history_.GetCurrentTask();
+	if (current && current->Is("HistEq"))
+	{
+		// do nothing
+	}
+	else
+	{
+		auto task = new HistEqTask(image_.Copy());
+		history_.PushNewTask(task);
+	}
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 bool WorkFile::IsChanged() const
