@@ -4,15 +4,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 wxBitmapType PathToBmpType(const wxString& path)
 {
-	if (path.EndsWith(".bmp") || path.EndsWith(".bmp"))
+	auto lowerPath = path.Lower();
+
+	if (lowerPath.EndsWith(".bmp") || lowerPath.EndsWith(".bmp"))
 		return wxBITMAP_TYPE_BMP;
-	if (path.EndsWith(".jpeg") || path.EndsWith(".jpg"))
+	if (lowerPath.EndsWith(".jpeg") || lowerPath.EndsWith(".jpg"))
 		return wxBITMAP_TYPE_JPEG;
-	if (path.EndsWith(".gif"))
+	if (lowerPath.EndsWith(".gif"))
 		return wxBITMAP_TYPE_GIF;
-	if (path.EndsWith(".tiff") || path.EndsWith(".tif"))
+	if (lowerPath.EndsWith(".tiff") || lowerPath.EndsWith(".tif"))
 		return wxBITMAP_TYPE_TIFF;
-	if (path.EndsWith(".png"))
+	if (lowerPath.EndsWith(".png"))
 		return wxBITMAP_TYPE_PNG;
 
 	return wxBITMAP_TYPE_INVALID;
