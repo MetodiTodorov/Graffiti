@@ -33,12 +33,12 @@ void HistEqTask::DoEqualization()
 	std::map<BYTE, int> rCount, gCount, bCount;
 	for (int i = 0; i < bytes; i++)
 	{
-		if (i % 3 == 0)
-			rCount[GetRed(rgb[i])]++;
-		else if (i % 3 == 1)
-			gCount[GetGreen(rgb[i])]++;
+		if ((i % 3) == 0)
+			rCount[rgb[i]]++;
+		else if ((i % 3) == 1)
+			gCount[rgb[i]]++;
 		else
-			bCount[GetBlue(rgb[i])]++;
+			bCount[rgb[i]]++;
 	}
 
 	auto hRed = CalcProbability(rCount, pixels);
@@ -82,7 +82,7 @@ std::map<BYTE, float> HistEqTask::CalcProbability(const std::map<BYTE, int>& cnt
 std::map<BYTE, float> HistEqTask::DerProbability(const std::map<BYTE, float>& pr)
 {
 	std::map<BYTE, float> yPrim;
-	float prev = 0.0;
+	float prev = 0.0f;
 	for (auto it : pr)
 	{
 		prev += it.second;
